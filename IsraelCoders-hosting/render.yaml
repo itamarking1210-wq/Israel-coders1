@@ -1,0 +1,16 @@
+# הגדרה מוכנה ל-Render: New + → Blueprint → בוחרים את המאגר מ-GitHub.
+# את המפתחות (NVIDIA_API_KEY, TEACHER_CODE) Render יבקש מכם להקליד בזמן היצירה.
+services:
+  - type: web
+    name: israel-coders
+    runtime: python
+    buildCommand: "echo no build needed"
+    startCommand: python server.py
+    healthCheckPath: /healthz
+    envVars:
+      - key: NVIDIA_API_KEY
+        sync: false
+      - key: TEACHER_CODE
+        sync: false
+      - key: NVIDIA_MODEL
+        value: nvidia/nemotron-3.5-bolt-e4b

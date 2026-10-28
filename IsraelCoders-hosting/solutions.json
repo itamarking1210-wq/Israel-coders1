@@ -1,0 +1,82 @@
+{
+  "owl-call": {
+    "code": "print(\"Hoo hoo! Welcome to the forest\")",
+    "note": "שורה אחת מספיקה. הסוד הוא לדייק בכל תו — אות גדולה, רווח וסימן קריאה."
+  },
+  "ranger-badge": {
+    "code": "name = input(\"Name? \")\nage = input(\"Age? \")\nprint(f\"Ranger {name}, age {age}, is ready!\")",
+    "note": "כל input נשמר במשתנה משלו, ו-f-string משלב את שניהם במשפט אחד. שימו לב: לא היה צריך int, כי לא עושים חשבון עם הגיל — רק מציגים אותו."
+  },
+  "forest-years": {
+    "code": "age = int(input(\"Age? \"))\nprint(f\"In 5 years you will be {age + 5}\")",
+    "note": "int עוטף את input כבר בשורה הראשונה, כך ש-age הוא מספר מההתחלה. אפשר גם לשמור קודם טקסט ולהמיר אחר כך — שתי הדרכים נכונות."
+  },
+  "mushroom-baskets": {
+    "code": "per_basket = int(input())\nbaskets = int(input())\nprint(f\"Total mushrooms: {per_basket * baskets}\")",
+    "note": "שמות משתנים ברורים (per_basket, baskets) עוזרים להבין את הקוד גם בעוד חודש."
+  },
+  "day-night": {
+    "code": "hour = int(input())\nif 6 <= hour < 18:\n    print(\"Day\")\nelse:\n    print(\"Night\")",
+    "note": "בפייתון אפשר לכתוב השוואה כפולה: 6 <= hour < 18. זה בדיוק כמו hour >= 6 and hour < 18 — רק קצר יותר."
+  },
+  "tree-height": {
+    "code": "height = int(input())\nif height >= 30:\n    print(\"Giant\")\nelif height >= 10:\n    print(\"Tall\")\nelse:\n    print(\"Small\")",
+    "note": "מתחילים מהתנאי הכי \"גבוה\". ככה כשמגיעים ל-elif, כבר ידוע שהעץ נמוך מ-30."
+  },
+  "count-trees": {
+    "code": "n = int(input())\nfor i in range(1, n + 1):\n    print(f\"Tree {i}\")",
+    "note": "range(1, n + 1) — מתחילים מ-1, וה-+1 נדרש כי הסוף לא נכלל."
+  },
+  "acorn-pile": {
+    "code": "n = int(input())\ntotal = 0\nfor day in range(1, n + 1):\n    total = total + day\nprint(f\"Acorns: {total}\")",
+    "note": "צובר קלאסי: מתחילים מ-0 ומוסיפים בכל סיבוב. אגב, אפשר גם בלי לולאה: sum(range(1, n + 1)) — או הנוסחה של גאוס n * (n + 1) // 2."
+  },
+  "countdown": {
+    "code": "n = int(input())\nfor i in range(n, 0, -1):\n    print(i)\nprint(\"Go!\")",
+    "note": "צעד של -1 סופר אחורה, והסוף 0 לא נכלל — לכן הלולאה נעצרת ב-1. ה-Go! מחוץ ללולאה, אז הוא מודפס פעם אחת."
+  },
+  "secret-message": {
+    "code": "word = input()\nprint(word[::-1])",
+    "note": "חיתוך עם צעד -1 עובר על המחרוזת מהסוף להתחלה. דרך ארוכה יותר: לולאה שמוסיפה כל אות לפני מה שכבר נבנה."
+  },
+  "heaviest-acorn": {
+    "code": "heaviest = int(input())\nfor i in range(4):\n    weight = int(input())\n    if weight > heaviest:\n        heaviest = weight\nprint(f\"Heaviest: {heaviest}\")",
+    "note": "הטריק: הבלוט הראשון הוא \"הכבד עד עכשיו\". ככה אין בעיה גם עם מספרים שליליים — לעומת להתחיל מ-0."
+  },
+  "gate-password": {
+    "code": "tries = 1\nguess = input()\nwhile guess != \"owl\":\n    tries = tries + 1\n    guess = input()\nprint(f\"Gate open! Tries: {tries}\")",
+    "note": "קולטים ניסיון אחד לפני הלולאה, ובתוכה קולטים את הבא. המונה מתחיל ב-1 כי הניסיון הראשון כבר נספר."
+  },
+  "halving": {
+    "code": "distance = int(input())\njumps = 0\nwhile distance > 0:\n    distance = distance // 2\n    jumps = jumps + 1\nprint(f\"Jumps: {jumps}\")",
+    "note": "בכל סיבוב שני דברים משתנים: המרחק קטן, והמונה גדל. ככה הלולאה תמיד מתקרבת לסוף."
+  },
+  "area-func": {
+    "code": "def area(length, width):\n    return length * width\n\nlength = int(input())\nwidth = int(input())\nprint(f\"Area: {area(length, width)}\")",
+    "note": "הפונקציה רק מחשבת ומחזירה — את הקלט וההדפסה עושים מחוץ לה. ככה אפשר להשתמש ב-area שוב בכל מקום."
+  },
+  "ancient-tree": {
+    "code": "def is_ancient(age):\n    return age >= 100\n\nif is_ancient(int(input())):\n    print(\"Ancient tree\")\nelse:\n    print(\"Young tree\")",
+    "note": "age >= 100 כבר נותן True או False, אז אין צורך ב-if בתוך הפונקציה."
+  },
+  "backpack": {
+    "code": "n = int(input())\nitems = []\nfor i in range(n):\n    items.append(input())\n\nnumber = 1\nfor item in items:\n    print(f\"{number}. {item}\")\n    number = number + 1",
+    "note": "שני שלבים נפרדים: קודם אוספים, אחר כך מדפיסים. כשתכירו את enumerate, אפשר גם: for number, item in enumerate(items, 1)."
+  },
+  "acorn-average": {
+    "code": "n = int(input())\nweights = []\nfor i in range(n):\n    weights.append(int(input()))\nprint(f\"Average: {sum(weights) / len(weights)}\")",
+    "note": "sum ו-len עושים את כל העבודה. החילוק עם / נותן תמיד מספר עשרוני, ולכן מופיע 4.0 ולא 4."
+  },
+  "animal-sounds": {
+    "code": "sounds = {\"owl\": \"Hoo\", \"fox\": \"Yip\", \"bear\": \"Grr\"}\nanimal = input()\nif animal in sounds:\n    print(sounds[animal])\nelse:\n    print(\"Unknown\")",
+    "note": "בודקים עם in לפני שניגשים למילון. קיצור שימושי: sounds.get(animal, \"Unknown\") עושה את כל זה בשורה אחת."
+  },
+  "word-count": {
+    "code": "counts = {}\nfor word in input().split():\n    if word in counts:\n        counts[word] = counts[word] + 1\n    else:\n        counts[word] = 1\nfor word in counts:\n    print(f\"{word}: {counts[word]}\")",
+    "note": "בפעם הראשונה יוצרים את המפתח עם 1, ובפעמים הבאות מגדילים. מילון זוכר את הסדר, ולכן ההדפסה לפי סדר ההופעה."
+  },
+  "ranger-report": {
+    "code": "n = int(input())\nbest_name = \"\"\nbest_score = -1\ntotal = 0\nfor i in range(n):\n    name, score = input().split()\n    score = int(score)\n    total = total + score\n    if score > best_score:\n        best_name = name\n        best_score = score\nprint(f\"Best: {best_name} ({best_score})\")\nprint(f\"Average: {total / n}\")",
+    "note": "name, score = ...split() מפרק את השורה לשני משתנים בבת אחת. בלולאה אחת עושים את שני החישובים: הטוב ביותר וגם הסכום."
+  }
+}
