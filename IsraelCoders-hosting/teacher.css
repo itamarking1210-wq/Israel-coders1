@@ -1,0 +1,117 @@
+/* לוח המורה — משתמש במשתנים ובכפתורים של styles.css */
+body.teacher-page { overflow: auto; }
+
+.t-badge {
+  margin-inline-start: 6px; padding: 2px 8px; font-size: 12px; font-weight: 700;
+  color: var(--on-accent); background: var(--accent); border-radius: 4px; letter-spacing: 0;
+}
+
+.t-layout {
+  display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 16px;
+  padding: 16px; min-height: calc(100vh - 56px); align-items: start;
+}
+.t-side h2 { margin: 0 0 12px; font-size: 18px; }
+.t-classes { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.t-class {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  padding: 10px 12px; cursor: pointer; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px;
+}
+.t-class:hover { border-color: var(--accent-2); }
+.t-class.active { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(242, 181, 68, .3); }
+.t-class small { color: var(--muted); white-space: nowrap; }
+.t-new { display: flex; flex-direction: column; gap: 8px; padding-top: 14px; border-top: 1px solid var(--line); }
+.t-new .field input { letter-spacing: 0; font-size: 15px; }
+.t-msg { min-height: 1.2em; margin: 8px 0 0; font-size: 13px; color: var(--err); }
+
+.t-main { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.t-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+#classView { display: flex; flex-direction: column; gap: 14px; }
+
+.t-empty { text-align: center; padding: 40px 24px; }
+.t-empty img { width: 110px; height: 110px; }
+.t-empty h1 { margin: 8px 0; }
+.t-empty p { max-width: 480px; margin: 0 auto; line-height: 1.8; color: #d9ead9; }
+
+.t-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.t-head h1 { margin: 0 0 4px; font-size: 26px; }
+.t-sub { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.6; }
+.t-code { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 16px; background: rgba(0,0,0,.3); border: 2px dashed var(--accent); border-radius: 10px; }
+.t-code span { font-size: 12px; color: var(--muted); }
+.t-code strong { font: 700 28px 'JetBrains Mono', monospace; letter-spacing: 4px; color: var(--accent); }
+.t-code-actions { display: flex; gap: 6px; }
+
+.t-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.t-stat { display: flex; flex-direction: column; gap: 4px; padding: 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.t-stat strong { font-size: 26px; color: var(--accent); }
+.t-stat span { font-size: 13px; color: var(--muted); }
+.t-stat.warn { border-color: rgba(255, 138, 61, .6); }
+.t-stat.warn strong { color: #ff8a3d; }
+
+.t-toolbar { display: flex; justify-content: space-between; align-items: flex-end; }
+.t-tabs { padding: 0; }
+.t-tabs .tab { border-radius: 10px 10px 0 0; }
+
+.t-table-wrap, .t-map-wrap { overflow-x: auto; }
+.t-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.t-table th, .t-table td { padding: 10px 8px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.t-table th { font-size: 12px; font-weight: 500; color: var(--muted); }
+.t-table tbody tr, .t-map tbody tr { cursor: pointer; }
+.t-table tbody tr:hover, .t-map tbody tr:hover { background: rgba(255, 255, 255, .04); }
+.t-name { font-weight: 500; }
+.t-progress { width: 110px; height: 8px; margin-bottom: 4px; background: rgba(255,255,255,.1); border-radius: 99px; overflow: hidden; }
+.t-progress div { height: 100%; background: var(--accent); }
+.t-table small { color: var(--muted); }
+.t-status { padding: 3px 9px; font-size: 12px; font-weight: 700; border-radius: 4px; }
+.t-status.help { color: #1d1608; background: #ff8a3d; }
+.t-status.idle { color: var(--muted); background: rgba(255,255,255,.08); }
+.t-status.ok { color: var(--ok); background: rgba(61, 220, 151, .12); }
+.t-status.finished { color: var(--on-accent); background: var(--accent); }
+.t-none { padding: 24px; text-align: center; color: var(--muted); }
+.t-none strong { color: var(--accent); font-family: 'JetBrains Mono', monospace; letter-spacing: 2px; }
+
+.t-map { border-collapse: collapse; font-size: 12px; }
+.t-map th, .t-map td { padding: 6px 4px; text-align: center; border-bottom: 1px solid var(--line); }
+.t-map th { color: var(--muted); font-weight: 500; min-width: 26px; }
+.t-map .t-name { text-align: right; padding-inline-end: 12px; white-space: nowrap; font-size: 14px; }
+.cell { display: inline-block; width: 18px; height: 18px; border-radius: 4px; vertical-align: middle; }
+.cell.done { background: var(--ok); }
+.cell.done-help { background: #2b9e6e; box-shadow: inset 0 0 0 3px #ffd27a; }
+.cell.stuck { background: #ff8a3d; }
+.cell.started { background: rgba(242, 181, 68, .45); }
+.cell.none { background: rgba(255, 255, 255, .08); }
+.t-legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; font-size: 12px; color: var(--muted); }
+.t-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.t-legend .cell { width: 14px; height: 14px; }
+
+.t-danger { align-self: flex-start; color: var(--err) !important; }
+
+/* ---------- פרטי תלמיד ---------- */
+.t-dialog { width: min(720px, 94vw); max-height: 88vh; }
+.t-dialog-body { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+.t-dialog-head { display: flex; justify-content: space-between; align-items: flex-start; }
+.t-dialog-head h2 { margin: 0 0 4px; }
+.t-dialog-head .icon-btn { font-size: 26px; line-height: 1; }
+.t-missions { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.t-area-title { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.t-mission {
+  display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 8px; align-items: center;
+  width: 100%; margin-bottom: 6px; padding: 7px 9px; text-align: right; font: inherit; font-size: 13px;
+  color: var(--text); background: rgba(255,255,255,.05); border: 1px solid var(--line); border-radius: 6px;
+}
+.t-mission .cell { grid-row: span 2; }
+.t-mission small { color: var(--muted); font-size: 11px; }
+.t-mission:not(:disabled):hover { border-color: var(--accent); }
+.t-mission:disabled { cursor: default; }
+.t-code-view { padding: 12px; background: rgba(0,0,0,.3); border-radius: 8px; }
+.t-code-title { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.t-code-view pre { margin: 0; max-height: 260px; overflow: auto; text-align: left; white-space: pre-wrap; font: 13px/1.6 'JetBrains Mono', monospace; color: #e6e6f0; }
+
+@media (max-width: 900px) {
+  .t-layout { grid-template-columns: 1fr; }
+  .t-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .t-layout { padding: 10px; }
+  .t-head { flex-direction: column; align-items: stretch; }
+  .t-badge { display: none; }
+}
